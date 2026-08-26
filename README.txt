@@ -1,0 +1,1 @@
+Premium Cricket Dugout website v2. Uses the supplied logo.png in the navbar and hero profile card. Upload index.html + logo.png to Cloudflare Pages, attach cricketdugout.xyz, and replace the temporary Discord URL with the real invite.

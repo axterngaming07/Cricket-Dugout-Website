@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cricket Dugout — official Discord cricket management and card collection game. Explore commands, matches, squad management, cards, rewards and progression.">
+<meta name="robots" content="index,follow">
+<title>Cricket Dugout — Official</title>
+<style>
+:root{--bg:#02050a;--panel:#070d15;--gold:#ffc928;--gold2:#ffdf63;--muted:#aab7c7;--text:#f7f8fb;--line:rgba(255,201,40,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#02050a;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-4;background:radial-gradient(ellipse at 50% 15%,rgba(255,196,38,.14),transparent 30%),radial-gradient(ellipse at 10% 55%,rgba(255,177,0,.08),transparent 35%),linear-gradient(180deg,#03060b 0%,#06101a 40%,#02050a 100%)}
+body:after{content:"";position:fixed;inset:0;z-index:-3;opacity:.35;background:linear-gradient(90deg,transparent 49.8%,rgba(255,201,40,.06) 50%,transparent 50.2%),repeating-linear-gradient(90deg,transparent 0 95px,rgba(255,255,255,.018) 96px 97px)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1240px;margin:auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:20;background:rgba(2,5,10,.84);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,201,40,.12)}
+.navin{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:950}.brand img{width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(255,201,40,.3))}.brandText{font-size:20px}.brandText span{color:var(--gold)}
+.links{display:flex;align-items:center;gap:22px;color:#c7d0dc;font-size:13px;font-weight:700}.links a:hover{color:var(--gold)}
+.hero{position:relative;min-height:690px;padding:82px 0 62px;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 62% 42%,rgba(255,196,38,.16),transparent 22%),radial-gradient(ellipse at 52% 75%,rgba(255,196,38,.1),transparent 32%),linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
+.hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-120px;height:330px;z-index:-1;background:radial-gradient(ellipse at center,rgba(255,201,40,.16),transparent 58%);transform:perspective(400px) rotateX(58deg)}
+.heroGrid{display:grid;grid-template-columns:1.35fr .65fr;gap:45px;align-items:center;width:100%}
+.badge{display:inline-flex;padding:9px 13px;border:1px solid rgba(255,201,40,.36);background:rgba(255,201,40,.07);border-radius:999px;color:var(--gold2);font-size:12px;font-weight:900;letter-spacing:.8px}
+h1{font-size:clamp(48px,6.5vw,82px);line-height:.96;margin:21px 0 19px;letter-spacing:-4px}.gold{color:var(--gold);text-shadow:0 0 35px rgba(255,201,40,.16)}
+.lead{font-size:18px;line-height:1.75;color:#b7c4d3;max-width:720px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:14px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(9,17,27,.88);font-weight:850}.btn.primary{background:linear-gradient(135deg,#ffdc45,#f1b800);color:#111;border-color:#ffd33c;box-shadow:0 14px 35px rgba(255,201,40,.15)}.btn:hover{transform:translateY(-2px)}
+.heroCard{position:relative;background:linear-gradient(160deg,rgba(13,23,34,.94),rgba(3,8,14,.97));border:1px solid rgba(255,201,40,.24);border-radius:25px;padding:25px;box-shadow:0 30px 90px rgba(0,0,0,.45);overflow:hidden}
+.profileLogo{width:132px;height:132px;object-fit:contain;display:block;margin:0 auto 15px;filter:drop-shadow(0 0 30px rgba(255,201,40,.32))}
+.heroCard h3{text-align:center;margin:0 0 5px;font-size:22px}.miniTitle{text-align:center;color:var(--gold);font-weight:900;letter-spacing:2px;font-size:11px;text-transform:uppercase}
+.featureList{margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}.featureList li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06);color:#cbd5e2;font-size:14px}.featureList li:before{content:"✦";color:var(--gold);margin-right:9px}
+.status{margin-top:18px;color:#55e58a;font-weight:850;font-size:13px}.status i{display:inline-block;width:8px;height:8px;background:#35df76;border-radius:50%;box-shadow:0 0 12px #35df76;margin-right:7px}
+section{padding:76px 0;border-top:1px solid rgba(255,255,255,.06)}.eyebrow{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:11px}h2{font-size:40px;margin:10px 0 12px;letter-spacing:-1.5px}.sub{color:var(--muted);line-height:1.75;max-width:780px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.card{position:relative;background:linear-gradient(145deg,rgba(11,20,31,.96),rgba(4,9,15,.96));border:1px solid rgba(255,255,255,.075);border-radius:18px;padding:22px;box-shadow:0 15px 45px rgba(0,0,0,.22);overflow:hidden}.card h3{margin:0 0 8px}.card p{color:var(--muted);line-height:1.6;margin:0}.icon{font-size:25px;margin-bottom:12px}
+.commands{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}.cmd{background:rgba(5,12,20,.82);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:16px}.cmd code{color:var(--gold2);font-weight:900}.cmd small{display:block;color:var(--muted);margin-top:7px;line-height:1.5}
+.notice{margin-top:25px;padding:17px 18px;border:1px solid rgba(255,201,40,.18);background:rgba(255,201,40,.045);border-radius:14px;color:#c7d2df;line-height:1.6}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}.person{padding:18px;border:1px solid rgba(255,255,255,.07);border-radius:15px;background:#07101a}.person b{display:block}.person span{color:var(--muted);font-size:13px}
+footer{padding:38px 0;color:#8193a9;border-top:1px solid rgba(255,255,255,.07)}.footerin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.grid[style*="repeat(5"]{grid-template-columns:repeat(2,1fr)!important}.heroGrid,.grid,.team{grid-template-columns:1fr}.commands{grid-template-columns:1fr}.hero{padding-top:55px}.links a:not(.navBtn){display:none}}
+@media(max-width:560px){.wrap{padding:0 17px}.navin{height:68px}.brand img{width:42px;height:42px}.brandText{font-size:17px}h1{font-size:49px;letter-spacing:-2.5px}.hero{min-height:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin"><a class="brand" href="#"><img src="logo.png" alt="Cricket Dugout logo"><div class="brandText">CRICKET <span>DUGOUT</span></div></a><div class="links"><a href="#about">About</a><a href="#features">Features</a><a href="#commands">Commands</a><a href="#game">Game</a><a href="#team">Team</a></div></div></nav>
+
+<header class="hero"><div class="wrap heroGrid">
+<div>
+<div class="badge">OFFICIAL CRICKET DUGOUT HUB</div>
+<h1>Build your squad.<br><span class="gold">Rule the Dugout.</span></h1>
+<p class="lead">Cricket Dugout is a Discord cricket management game focused on squad building, player cards, matches, trading, upgrades, rewards and progression.</p>
+<div class="actions">
+<a class="btn primary" href="#commands">Explore Commands</a>
+<a class="btn" href="https://top.gg/bot/1512849343747723265" target="_blank" rel="noopener">Top.gg</a>
+<a class="btn" href="https://discord.gg/UrpVRzU9K" target="_blank" rel="noopener">Join Discord</a>
+</div>
+</div>
+<div class="heroCard">
+<img class="profileLogo" src="logo.png" alt="Cricket Dugout official logo">
+<div class="miniTitle">Discord Cricket Game</div>
+<h3>Cricket Dugout</h3>
+<ul class="featureList">
+<li>Squad Building</li><li>Player Cards</li><li>Matches & Tournaments</li><li>Trading System</li><li>Rewards & Progression</li>
+</ul>
+<div class="status"><i></i>ACTIVE & GROWING</div>
+</div>
+</div></header>
+
+<div class="wrap" style="margin-bottom:10px"><div class="grid" style="grid-template-columns:repeat(5,1fr);gap:10px">
+<div class="card" style="text-align:center;padding:16px"><b style="font-size:24px;color:var(--gold)">50+</b><small style="display:block;color:var(--muted)">COMMANDS</small></div>
+<div class="card" style="text-align:center;padding:16px"><b style="font-size:24px;color:var(--gold)">6+</b><small style="display:block;color:var(--muted)">GAME SYSTEMS</small></div>
+<div class="card" style="text-align:center;padding:16px"><b style="font-size:24px;color:var(--gold)">24/7</b><small style="display:block;color:var(--muted)">DISCORD</small></div>
+<div class="card" style="text-align:center;padding:16px"><b style="font-size:24px;color:var(--gold)">🏏</b><small style="display:block;color:var(--muted)">CRICKET</small></div>
+<div class="card" style="text-align:center;padding:16px"><b style="font-size:24px;color:var(--gold)">∞</b><small style="display:block;color:var(--muted)">PROGRESSION</small></div>
+</div></div><section id="about"><div class="wrap"><div class="eyebrow">About</div><h2>What is Cricket Dugout?</h2><p class="sub">A Discord-based cricket management and card collection experience. Build a team, collect cards, manage your Playing XI, compete in matches and grow your club.</p>
+<div class="grid">
+<div class="card"><div class="icon">🏏</div><h3>Build Your Squad</h3><p>Manage your squad, Playing XI, substitutes and reserves.</p></div>
+<div class="card"><div class="icon">🃏</div><h3>Collect Cards</h3><p>Discover player cards, inspect stats and grow your collection.</p></div>
+<div class="card"><div class="icon">⚔️</div><h3>Play Matches</h3><p>Start different match formats and follow the scoreboard and match flow.</p></div>
+<div class="card"><div class="icon">💰</div><h3>Economy</h3><p>Buy, sell and trade eligible player cards while managing your resources.</p></div>
+<div class="card"><div class="icon">⬆️</div><h3>Upgrade</h3><p>Upgrade eligible players and use skills and progression systems.</p></div>
+<div class="card"><div class="icon">🎁</div><h3>Rewards</h3><p>Claim daily rewards, boxes, packs, quests and other progression rewards.</p></div>
+</div></div></section>
+
+<section id="commands"><div class="wrap"><div class="eyebrow">Command Center</div><h2>Core Commands</h2><p class="sub">These commands are derived from the current command guide supplied for Cricket Dugout. Keep the live bot and this website synchronized whenever a command changes.</p>
+<div class="commands">
+<div class="cmd"><code>ddebut</code><small>Create your Cricket Dugout account and begin your journey.</small></div>
+<div class="cmd"><code>dhelp</code><small>Open the main help menu.</small></div>
+<div class="cmd"><code>duse all</code><small>Browse the detailed command usage guide.</small></div>
+<div class="cmd"><code>dprofile</code><small>View your Cricket Dugout profile and account summary.</small></div>
+<div class="cmd"><code>dsquad</code><small>View your squad, XI, substitutes and reserves.</small></div>
+<div class="cmd"><code>dxi</code><small>Display your current Playing XI.</small></div>
+<div class="cmd"><code>dcaptain</code><small>Assign a captain from your team setup.</small></div>
+<div class="cmd"><code>dvc</code><small>Assign a vice-captain.</small></div>
+<div class="cmd"><code>dplay 1/2/5/10/20/so</code><small>Start a match in a selected format.</small></div>
+<div class="cmd"><code>dmm</code><small>Send a matchmaking ping.</small></div>
+<div class="cmd"><code>dtm &lt;overs&gt; &lt;team size&gt;</code><small>Create or join multiplayer team matches.</small></div>
+<div class="cmd"><code>dcard &lt;player&gt;</code><small>View detailed player-card information.</small></div>
+<div class="cmd"><code>dfind</code><small>Search players from the card collection.</small></div>
+<div class="cmd"><code>dtrade @user</code><small>Start a player-card trade.</small></div>
+<div class="cmd"><code>dbuy &lt;player&gt;</code><small>Purchase an eligible player card.</small></div>
+<div class="cmd"><code>dsell &lt;player&gt;</code><small>Sell a selected player card for coins.</small></div>
+<div class="cmd"><code>dupgrade &lt;player&gt;</code><small>Upgrade an eligible player's rating or attributes.</small></div>
+<div class="cmd"><code>dclaim</code><small>Claim a free random player reward when ready.</small></div>
+<div class="cmd"><code>ddaily</code><small>Collect the daily login/streak reward.</small></div>
+<div class="cmd"><code>dshop</code><small>Open the in-game shop.</small></div>
+<div class="cmd"><code>dquest</code><small>View daily or weekly quests and progress.</small></div>
+<div class="cmd"><code>dpass</code><small>View Monthly Pass progress and rewards.</small></div>
+<div class="cmd"><code>dspass</code><small>View Season Pass progress and rewards.</small></div>
+<div class="cmd"><code>denergy</code><small>View Energy used for Pass Skills.</small></div>
+<div class="cmd"><code>dskills</code><small>Browse the skill shop.</small></div>
+<div class="cmd"><code>dskill</code><small>Manage owned/equipped skills.</small></div>
+<div class="cmd"><code>dlb</code><small>View global leaderboards.</small></div>
+<div class="cmd"><code>dgs</code><small>View a player-card global statistics leaderboard.</small></div>
+<div class="cmd"><code>dresults</code><small>Review recently completed match results.</small></div>
+<div class="cmd"><code>dsb</code><small>View the live/completed scoreboard.</small></div>
+<div class="cmd"><code>dcareer</code><small>Begin the Career Mode journey.</small></div>
+</div>
+<div class="notice"><b>Full guide:</b> In Discord, use <code>duse all</code> for the complete paginated guide or <code>duse &lt;command&gt;</code> for an individual command.</div>
+</div></section>
+
+<section id="game"><div class="wrap"><div class="eyebrow">Game Systems</div><h2>Everything in one place</h2><div class="grid">
+<div class="card"><h3>Match</h3><p>Match formats include 1, 2, 5, 10, 20 overs and Super Over in the current command guide. Multiplayer team formats are also supported by the documented command system.</p></div>
+<div class="card"><h3>Squad</h3><p>Manage team name, Playing XI, substitutes/reserves, captain, vice-captain and player positions.</p></div>
+<div class="card"><h3>Cards & Stats</h3><p>Inspect OVR, role, country, rarity and performance information, plus card-specific leaderboards.</p></div>
+<div class="card"><h3>Trading & Market</h3><p>Use the market and secure trade flow to buy, sell and exchange eligible cards.</p></div>
+<div class="card"><h3>Progression</h3><p>Level up, complete quests, claim rewards and progress through pass systems.</p></div>
+<div class="card"><h3>Career Mode</h3><p>Create and customize a Career Mode player and progress from Gully Cricket toward the international stage.</p></div>
+</div></div></section>
+
+<section id="team"><div class="wrap"><div class="eyebrow">Team</div><h2>Cricket Dugout Team</h2><p class="sub">Team information below is taken from the supplied <code>dinfo</code> content.</p><div class="team">
+<div class="person"><b>Axtern Gaming</b><span>Developer</span></div>
+<div class="person"><b>Bhavesh & Rolex</b><span>President</span></div>
+<div class="person"><b>Arman & Aryan</b><span>Directors</span></div>
+<div class="person"><b>A1Gaming & Purvik</b><span>Team Members</span></div>
+</div></div></section>
+
+<div class="card" style="margin-top:25px"><p><b>Official name:</b> Cricket Dugout</p><p><b>Platform:</b> Discord</p><p><b>Developer:</b> Axtern Gaming</p><p><b>Type:</b> Cricket management and card collection game</p><p><b>Core systems:</b> player cards, squad management, Playing XI, matches, economy, trading, upgrades, skills, rewards, quests, passes and Career Mode.</p><p><b>Official domain:</b> cricketdugout.xyz</p><p><b>Last documentation update:</b> 25 August 2026</p></div>
+</div></section>
+
+<footer><div class="wrap footerin"><div>© 2026 Cricket Dugout · Axtern Gaming</div><div><a href="#about">About</a> · <a href="#commands">Commands</a><a href="#ai"></a></div></div></footer>
+</body></html>
